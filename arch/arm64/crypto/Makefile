@@ -50,6 +50,10 @@ aes-arm64-y := aes-cipher-core.o aes-cipher-glue.o
 obj-$(CONFIG_CRYPTO_AES_ARM64_BS) += aes-neon-bs.o
 aes-neon-bs-y := aes-neonbs-core.o aes-neonbs-glue.o
 
+ifeq ($(cc-name),clang)
+ccflags-y += -mcpu=cortex-a53 -mtune=cortex-a53+crc+crypto
+endif
+
 CFLAGS_aes-glue-ce.o	:= -DUSE_V8_CRYPTO_EXTENSIONS
 
 $(obj)/aes-glue-%.o: $(src)/aes-glue.c FORCE
