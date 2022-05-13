@@ -1,5 +1,5 @@
 SECONDS=0 # builtin bash timer
-ZIPNAME="QuickSilveR-v2.6-R-GinkLow-$(date '+%Y%m%d-%H%M').zip"
+ZIPNAME="QuickSilveR-v2.7-R-GinkLow-$(date '+%Y%m%d-%H%M').zip"
 TC_DIR="/workspace/Gitpod-Workspaces/protonclang"
 AK3_DIR="/workspace/Gitpod-Workspaces/AnyKernel3"
 DEFCONFIG="vendor/ginkgo-perf_defconfig"
@@ -15,7 +15,7 @@ fi
 fi
 
 export KBUILD_BUILD_USER=fajar3109
-export KBUILD_BUILD_HOST=gitpod
+export KBUILD_BUILD_HOST=guaganteng
 
 if [[ $1 = "-r" || $1 = "--regen" ]]; then
 make O=out ARCH=arm64 $DEFCONFIG savedefconfig
